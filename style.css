@@ -1,0 +1,732 @@
+/* Importación de fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+    --primary-color: #00eeff; /* Azul cian brillante */
+    --secondary-color: #ff00ee; /* Magenta brillante */
+    --dark-bg: #0d1117; /* Fondo oscuro casi negro */
+    --dark-light-bg: #1e2a3a; /* Azul oscuro para secciones */
+    --text-color: #e0e0e0; /* Gris claro para texto */
+    --border-color: #334455; /* Borde sutil */
+    --glow-effect: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color), 0 0 30px var(--primary-color);
+    --transition-speed: 0.3s ease-in-out;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden; /* Evitar scroll horizontal */
+}
+
+/* Animación de fondo (Grid galáctico) */
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(0, 238, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(255, 0, 238, 0.1) 0%, transparent 50%);
+    background-size: 100% 100%;
+    animation: backgroundPulse 15s infinite alternate ease-in-out;
+}
+
+@keyframes backgroundPulse {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+
+/* Header */
+.header-main {
+    background-color: rgba(13, 17, 23, 0.8); /* Fondo semi-transparente */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8em;
+    color: var(--primary-color);
+    text-shadow: var(--glow-effect);
+}
+
+.logo h1 span {
+    color: var(--secondary-color);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-left: 30px;
+}
+
+.main-nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1em;
+    transition: color var(--transition-speed), text-shadow var(--transition-speed);
+}
+
+.main-nav ul li a:hover {
+    color: var(--primary-color);
+    text-shadow: 0 0 8px var(--primary-color);
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh; /* Ajustado para dejar espacio al header */
+    text-align: center;
+    padding: 20px 5%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 800px;
+    z-index: 1;
+}
+
+.hero-content h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-shadow: var(--glow-effect);
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.3em;
+    color: var(--text-color);
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1em;
+    transition: all var(--transition-speed);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: all 0.5s ease-in-out;
+    z-index: -1;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: var(--dark-bg);
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 0 15px var(--primary-color);
+}
+
+.primary-btn:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+    box-shadow: 0 0 15px var(--secondary-color);
+}
+
+.secondary-btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--dark-bg);
+}
+
+/* Hero Visual Icons */
+.hero-visual {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10em;
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+.hero-visual .fas {
+    position: absolute;
+    animation: iconFloat 15s infinite ease-in-out alternate;
+    text-shadow: var(--glow-effect);
+}
+
+.icon-ar { color: var(--primary-color); top: -80px; left: -100px; animation-delay: 0s; }
+.icon-vr { color: var(--secondary-color); top: 50px; left: 150px; animation-delay: 5s; }
+.icon-ai { color: #f0f8ff; top: 120px; left: -50px; animation-delay: 10s; } /* Un blanco azulado */
+
+@keyframes iconFloat {
+    0% { transform: translate(0, 0); opacity: 0.05; }
+    50% { transform: translate(20px, 20px); opacity: 0.07; }
+    100% { transform: translate(0, 0); opacity: 0.05; }
+}
+
+
+/* Secciones Generales */
+.section {
+    padding: 80px 5%;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--dark-light-bg);
+}
+
+.section:nth-child(even) {
+    background-color: var(--dark-bg); /* Alternar color de fondo */
+}
+
+.section-header {
+    margin-bottom: 60px;
+}
+
+.section-header h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.8em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    text-shadow: var(--glow-effect);
+}
+
+.section-header p {
+    font-size: 1.2em;
+    color: var(--text-color);
+}
+
+/* About Section */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.about-card {
+    background-color: var(--dark-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 40px;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.about-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(0, 238, 255, 0.4);
+}
+
+.about-card i {
+    font-size: 3em;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px var(--secondary-color);
+}
+
+.about-card h4 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.about-card p {
+    color: var(--text-color);
+}
+
+/* Services Section (Similar a About) */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: var(--dark-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 40px;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(255, 0, 238, 0.4);
+}
+
+.service-card i {
+    font-size: 3em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px var(--primary-color);
+}
+
+.service-card h4 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5em;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: var(--text-color);
+}
+
+/* Portfolio Section */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.portfolio-item {
+    background-color: var(--dark-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.05);
+}
+
+.portfolio-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity var(--transition-speed);
+}
+
+.portfolio-item:hover .overlay {
+    opacity: 1;
+}
+
+.overlay h4 {
+    color: var(--primary-color);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.6em;
+    margin-bottom: 10px;
+    text-shadow: var(--glow-effect);
+}
+
+.overlay p {
+    color: var(--text-color);
+    text-align: center;
+    padding: 0 20px;
+}
+
+/* Contact Section */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    padding: 15px;
+    background-color: var(--dark-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    color: var(--text-color);
+    font-size: 1em;
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #888;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 238, 255, 0.5);
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form .primary-btn {
+    align-self: flex-end; /* Alinea el botón a la derecha */
+}
+
+/* Footer */
+.footer-main {
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    padding: 30px 5%;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Para que sea responsivo */
+}
+
+.footer-main p {
+    margin-bottom: 10px;
+}
+
+.social-links a {
+    color: var(--text-color);
+    font-size: 1.5em;
+    margin: 0 10px;
+    transition: color var(--transition-speed), text-shadow var(--transition-speed);
+}
+
+.social-links a:hover {
+    color: var(--secondary-color);
+    text-shadow: 0 0 10px var(--secondary-color);
+}
+
+/* ----- Chatbot Floating Widget Styles ----- */
+/* Estilos para el botón flotante del chatbot */
+.chatbot-floating-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 2000; /* Asegúrate de que esté encima de todo */
+}
+
+#chatbot-toggle {
+    background-color: var(--primary-color);
+    color: var(--dark-bg);
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 0 15px var(--primary-color);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+#chatbot-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px var(--primary-color);
+}
+
+/* Estilos para la ventana del chatbot */
+.chatbot-window {
+    position: absolute;
+    bottom: 80px; /* Encima del botón */
+    right: 0;
+    width: 350px;
+    height: 500px;
+    background-color: var(--dark-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transform: scale(0.8); /* Empieza pequeño */
+    opacity: 0;
+    pointer-events: none; /* No interactuable hasta que sea visible */
+    transform-origin: bottom right;
+    transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+}
+
+.chatbot-window.visible {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: all;
+}
+
+.chat-header-bot {
+    background-color: var(--dark-light-bg);
+    color: var(--primary-color);
+    padding: 15px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2em;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    position: relative;
+}
+
+.chat-header-bot .close-btn {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.5em;
+    color: var(--text-color);
+    transition: color var(--transition-speed);
+}
+
+.chat-header-bot .close-btn:hover {
+    color: var(--secondary-color);
+}
+
+.chat-messages {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #1a222c; /* Un fondo un poco más claro para el chat */
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-radius: 18px;
+    max-width: 80%;
+    font-size: 0.95em;
+    word-wrap: break-word; /* Para que el texto largo no desborde */
+}
+
+.user-message {
+    background-color: var(--primary-color);
+    color: var(--dark-bg);
+    margin-left: auto;
+    border-bottom-right-radius: 5px; /* Efecto burbuja */
+}
+
+.bot-message {
+    background-color: var(--dark-light-bg);
+    color: var(--text-color);
+    margin-right: auto;
+    border-bottom-left-radius: 5px; /* Efecto burbuja */
+}
+
+.chat-input-container {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--dark-bg);
+}
+
+.chat-input {
+    flex-grow: 1;
+    padding: 10px;
+    background-color: var(--dark-light-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    color: var(--text-color);
+    font-size: 1em;
+    margin-right: 10px;
+    outline: none;
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.chat-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(0, 238, 255, 0.5);
+}
+
+.send-button {
+    background-color: var(--secondary-color);
+    color: var(--dark-bg);
+    border: none;
+    border-radius: 20px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 700;
+    transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.send-button:hover {
+    background-color: #ff33ff;
+    box-shadow: 0 0 10px var(--secondary-color);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .header-main {
+        flex-direction: column;
+        text-align: center;
+    }
+    .main-nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .main-nav ul li {
+        margin: 0 15px 10px;
+    }
+    .hero-content h2 {
+        font-size: 2.5em;
+    }
+    .hero-content p {
+        font-size: 1em;
+    }
+    .cta-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .section-header h3 {
+        font-size: 2em;
+    }
+    .about-grid, .services-grid, .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-main {
+        flex-direction: column;
+    }
+    .social-links {
+        margin-top: 15px;
+    }
+
+    /* Chatbot responsivo */
+    .chatbot-window {
+        width: 90vw; /* Ocupa casi todo el ancho */
+        height: 80vh; /* Ocupa casi toda la altura */
+        bottom: 10px;
+        right: 10px;
+    }
+    #chatbot-toggle {
+        width: 50px;
+        height: 50px;
+        font-size: 1.8em;
+        bottom: 15px;
+        right: 15px;
+    }
+    
+}
+
+*/
+#contexto p {
+  /* Estilos de fuente */
+  font-family: Arial, sans-serif; /* Define la fuente del texto */
+  font-size: 16px; /* Tamaño de la fuente */
+  line-height: 1.8; /* Espacio entre líneas para mejorar la legibilidad */
+  color: #333; /* Color del texto (un gris oscuro es más suave que el negro puro) */
+
+  /* Estilos de espaciado y alineación */
+  text-align: justify; /* Alinea el texto para que los bordes izquierdo y derecho queden rectos */
+  padding: 15px; /* Espacio interior alrededor del texto, creando una separación del borde del div */
+  margin-top: 0; /* Elimina el margen superior predeterminado del párrafo */
+  margin-bottom: 20px; /* Margen inferior para separar este párrafo del siguiente elemento */
+  background-color: #f9f9f9; /* Un color de fondo muy claro para resaltar el párrafo */
+  border-left: 5px solid #007bff; /* Una línea decorativa en el borde izquierdo, útil para bloques de texto importantes */
+}
+    
+
+
+.p1 {
+
+font-weight: bold;
+color: #cf40d4;
+font-size: 25px; /* Tamaño de la fuente */
+
+}
+
+/* Estilos para la tabla con el ID "tabla" */
+#tabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Estilos para las celdas de la cabecera dentro de la tabla */
+#tabla th {
+    background-color: #008cba;
+    color: white;
+    text-align: left;
+    padding: 12px;
+    border: 1px solid #dee2e6;
+}
+
+/* Estilos para las celdas de datos dentro de la tabla */
+#tabla td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #dee2e6;
+}
+
+/* Estilo para las filas (tr) dentro de la tabla */
+#tabla tr {
+    background-color: #000000;
+}
+
+/* Estilo para las filas pares (opcional) */
+#tabla tbody tr:nth-child(even) {
+    background-color: #000000;
+}
+
+/* Efecto de hover para las filas (opcional) */
+#tabla tbody tr:hover {
+    background-color: #38a1c4;
+    cursor: pointer;
+}

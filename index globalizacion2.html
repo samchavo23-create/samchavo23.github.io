@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Apps Móviles con RA, RV & IA</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <style>
+    body {
+      margin-left: 220px;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 100%;
+      background-color: #001f2f;
+      padding-top: 2rem;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+
+    .sidebar h3 {
+      color: #ffffff;
+      text-align: center;
+      font-family: 'Orbitron', sans-serif;
+      margin-bottom: 1rem;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar ul li {
+      margin: 0.5rem 0;
+    }
+
+    .sidebar ul li a {
+      color: #00e5ff;
+      text-decoration: none;
+      display: block;
+      padding: 0.5rem 1rem;
+      transition: background 0.3s ease;
+    }
+
+    .sidebar ul li a:hover {
+      background-color: #005c77;
+    }
+
+    .section-header {
+      text-align: center;
+    }
+
+    .diagnostico-section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .diagnostico-section h4 {
+      color: #008cba;
+      font-size: 40px;
+      margin-top: 2rem;
+    }
+
+    .contact-section {
+      background-color: #001f2f;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .contact-section h3 {
+      margin-bottom: 1rem;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      font-size: 2rem;
+      color: #ffffff;
+      text-shadow: 0 0 5px #00e5ff, 0 0 10px #00e5ff, 0 0 20px #00e5ff;
+    }
+
+    .contact-buttons a {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #008cba;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-buttons a:hover {
+      background-color: #09365ca6;
+    }
+
+    /* Botón Ir Arriba */
+    #scrollTopBtn {
+      display: none;
+      position: fixed;
+      bottom: 50px;
+      left: 30px;
+      z-index: 1001;
+      background-color: #00acc1;
+      color: white;
+      border: none;
+      outline: none;
+      padding: 0.8rem 1rem;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      transition: background-color 0.3s ease;
+    }
+
+    #scrollTopBtn:hover {
+      background-color: #008cba;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Menú lateral -->
+  <div class="sidebar">
+    <h3>Temas</h3>
+    <ul>
+      <li><a href="#contexto">Contexto y Antecedentes</a></li>
+      <li><a href="#problema">Identificación del Problema</a></li>
+      <li><a href="#causas">Análisis de Causas</a></li>
+      <li><a href="#actores">Análisis de Actores Clave</a></li>
+      <li><a href="#recomendaciones">Recomendaciones y Plan</a></li>
+      <li><a href="#conclusion">Conclusión</a></li>
+    </ul>
+  </div>
+
+  <header class="header-main">
+    <div class="logo">
+      <h1>PROYECTO<span>Globalización</span></h1>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#about">Acerca de</a></li>
+        <li><a href="#services">Servicios</a></li>
+        <li><a href="portafolio.html">Portafolio</a></li>
+
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="hero-section">
+    <div class="hero-content">
+      <h2>Desarrollo de aplicaciones móviles con RA, RV, AI.</h2>
+      <p>El desarrollo de aplicaciones móviles está siendo revolucionado por la combinación de Realidad Aumentada (RA), Realidad Virtual (RV) e Inteligencia Artificial (IA). Esta fusión crea experiencias inmersivas e inteligentes, con la IA actuando como el motor que potencia y hacen más dinámicas las aplicaciones de RA/RV. Comprender su evolución es clave para el futuro de la interacción digital.</p>
+      <div class="cta-buttons">
+        <a href="RA.html" class="btn primary-btn">¡Vive la experiencia de la realidad aumentada!</a>
+        <a href="Rv.html" class="btn secondary-btn">¡Prueba lo que es la realidad virtual!</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <i class="fas fa-cube icon-ar"></i>
+      <i class="fas fa-vr-cardboard icon-vr"></i>
+      <i class="fas fa-brain icon-ai"></i>
+    </div>
+  </main>
+
+  <section id="about" class="section about-section">
+    <div class="section-header">
+      <h3>Propósitos</h3>
+      <p>Aprende con nosotros</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-card">
+        <i class="fas fa-chart-line"></i>
+        <h4>Objetivo</h4>
+        <p>demostrar, como el uso de las nuevas Tecnologías como lo es la Realidad Virtual (Rv), Realidad Aumentada (Ra) e Inteligencia Artificial (Ia), y como estas Tecnologías han Revolucionado el desarrollo de aplicaciones móviles 
+</p>
+      </div>
+      <div class="about-card">
+        <i class="fas fa-users-cog"></i>
+        <h4>Misión</h4>
+        <p>Nuestro propósito es explicar a nuestros compañeros y profesora el funcionamiento de estas tecnologias, mostrando de qué manera pueden emplearse para mejorar el aprendizaje. A través de este proyecto, buscamos presentar ejemplos, aplicaciones y vivencias que evidencien que estas herramientas ya forman parte de nuestra vida cotidiana y pueden ser muy útiles en el presente.
+</p>
+      </div>
+      <div class="about-card">
+        <i class="fas fa-lightbulb"></i>
+        <h4>Visión</h4>
+        <p>Queremos inspirar a que todos perciban la tecnología como un recurso que hace que aprender sea más dinámico y atractivo. Imaginamos un futuro en el que el uso de estas tecnologías se integren de manera natural en las escuelas, dejando de verse como algo complicado o exclusivo. Con este trabajo deseamos demostrar que no solo sirven para el entretenimiento, sino que también pueden potenciar el estudio y prepararnos mejor para los desafíos que vienen.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diagnóstico del proyecto -->
+  <section class="diagnostico-section">
+    <div class="section-header">
+      <h3>Diagnóstico del Proyecto</h3>
+      <p>¡Explora con nosotros los puntos clave que fundamentan este desarrollo!</p>
+    </div>
+
+    <div id="contexto">
+      <h4>Contexto y Antecedentes</h4>
+<br>
+<br>
+      
+      <p>
+        <p class="p1">Descripción de la situación</p>
+<br>
+<br>
+
+Las tecnologías inmersivas (RA, RV, RM) han madurado y se usan ampliamente en sectores como educación, salud, comercio, manufactura, automoción y entretenimiento. El mercado está creciendo rápidamente, con proyecciones de alcanzar los 200.87 mil millones de dólares para 2030.
+Sin embargo, persisten desafíos:
+<br>
+<br>
+<br>
+Hardware: Dispositivos costosos, voluminosos y con limitaciones de precisión (cámaras 2D, GPS).
+<br>
+Software: Desarrollo complejo, falta de estandarización e interoperabilidad.
+<br>
+Experiencia de Usuario (UX): Dificultad en el diseño de interfaces intuitivas y expectativas de usuario poco realistas.
+<br>
+Económicos: Altos costos de dispositivos e infraestructura, y necesidad de modelos de negocio sostenibles.
+<br>
+Privacidad: Preocupaciones significativas sobre la seguridad y privacidad de los datos.
+<br>
+<br>
+<br>
+<p class="p1">Actores involucrados</p>
+<br>
+<br>
+El desarrollo de estas aplicaciones requiere un equipo multidisciplinario:
+<br>
+<br>
+Desarrolladores Móviles/Software: Codifican y mantienen la aplicación, integrando IA y RA/RV.
+<br>
+Diseñadores UX Product Designer: Crean experiencias de usuario intuitivas y atractivas.
+<br>
+Diseñadores 3D / Artistas 3D: Crean modelos y entornos virtuales.
+<br>
+Ingenieros de IA / Machine Learning: Desarrollan e integran capacidades de IA (reconocimiento, PLN).
+<br>
+Analistas de Sistemas: Optimizan hardware y software.
+<br>
+Gestores de Proyectos: Supervisan el proceso y los objetivos.
+<br>
+Analistas de Seguridad / Expertos en Ciberseguridad: Aseguran la protección de datos y la privacidad.
+<br>
+Analistas de Negocio: Alinean el desarrollo con los objetivos de negocio.
+<br>
+Desarrolladores de Ecosistemas Digitales: Construyen las plataformas virtuales.
+<br>
+Especialistas en Marketing Inmersivo: Promocionan las soluciones inmersivas.
+<br>
+<br>
+<br>
+Las habilidades técnicas (IA, ML, SDKs como ARKit/ARCore, diseño 3D) y blandas (creatividad, resolución de problemas, aprendizaje continuo) son esenciales. Empresas como Apple, Google, Meta, Unity y Epic Games son líderes en este ecosistema.
+<br>
+<br>
+<br>
+<p class="p1">Marco Teórico</p>
+<br>
+<br>
+•	Realidad Aumentada (RA): 
+<br>
+Superpone contenido digital en el mundo real, permitiendo la interacción con ambos. Ofrece inmersión parcial y usa dispositivos como smartphones.
+<br>
+<br>
+•	Realidad Virtual (RV): 
+<br>
+Crea un entorno completamente virtual, sumergiendo al usuario. Ofrece inmersión total y requiere cascos especializados.
+<br>
+<br>
+•	Realidad Mixta (RM): 
+<br>
+Híbrido de RA y RV donde objetos físicos y digitales coexisten e interactúan en tiempo real.
+<br>
+<br>
+•	Inteligencia Artificial (IA): 
+<br>
+Capacidad de las máquinas para aprender y razonar. Subcampos clave incluyen:
+<br>
+<br>
+•	Machine Learning (ML): 
+<br>
+Algoritmos que aprenden de datos.
+<br>
+<br>
+•	Deep Learning (DL): 
+<br>
+ML con redes neuronales complejas, clave para visión por computadora.
+<br>
+<br>
+•	Procesamiento de Lenguaje Natural (PLN): 
+<br>
+Permite a las máquinas comprender y generar lenguaje humano.
+<br>
+<br>
+•	Visión por Computadora (CV): 
+<br>
+Permite a las máquinas "ver" e interpretar datos visuales, crucial para el seguimiento en RA.
+<br>
+<br>
+La IA potencia la RA/RV a través del reconocimiento de objetos, comprensión del entorno, personalización de experiencias, interacción natural (voz/gestos) y optimización del rendimiento. SDKs como ARKit y ARCore son fundamentales, y los algoritmos SLAM son vitales para el seguimiento y mapeo preciso.
+<br>
+<br>
+<p class="p1">Tendencias históricos</p>
+<br>
+•	Historia de RA/RV: 
+<br>
+Desde el Sensorama (1962) y la "Espada de Damocles" (1968), pasando por los fracasos comerciales de los 90 (Nintendo Virtual Boy), hasta el renacimiento con Oculus Rift (2012). La RA móvil despegó con Google Glass (2013), Tango (2014), y especialmente con ARKit (2017) y ARCore (2018), popularizándose masivamente con Pokémon GO (2019).
+<br>
+<br>
+•	Historia de la IA: 
+<br>
+Desde los conceptos fundacionales (Turing, McCarthy en los 50), pasando por avances en ML (retropropagación en los 80), hasta hitos como Deep Blue (1997), Watson (2011) y AlphaGo (2016). La IA se ha integrado profundamente en las aplicaciones móviles para recomendaciones, asistentes de voz, reconocimiento facial y optimización.
+<br>
+<br>
+•	Convergencia Histórica: 
+<br>
+La verdadera integración de IA en RA/RV móvil se aceleró con ARKit y ARCore, que incorporan IA para mejorar el seguimiento, la comprensión de la escena y la interacción. Los avances en DL y PLN han sido cruciales.
+<br>
+<br>
+•	Pronósticos Futuros: 
+<br>
+El mercado seguirá creciendo, con mejoras en hardware (5G, Wi-Fi 6) y una integración más profunda en la vida cotidiana. Se esperan experiencias hiper-personalizadas, el desarrollo del metaverso, más IA en el borde y la creación de contenido impulsada por IA. Las consideraciones éticas y los nuevos modelos de negocio serán clave.
+</p>
+<br>
+    </div>
+
+    <div id="problema">
+      <h4>Identificación del Problema</h4>
+      <br>
+      <br>
+      <p>
+         <p class="p1">¿Cuál es el desafío más importante?</p>
+         <br>
+         <br>
+•	Desafío principal: 
+<br>
+Crear apps móviles con realidad virtual (RV), realidad aumentada (RA) e inteligencia artificial (IA) fáciles y accesibles sin equipos costosos.
+<br>
+<br>
+•	Problema secundario:
+<br>
+Falta de personalización para diferentes culturas y necesidades.
+<br>
+<br>
+•	¿Cómo afecta la globalización?
+<br>
+<br>
+Globalización: Facilita apps globales, pero diferencias tecnológicas y culturales limitan su alcance.
+<br>
+Publicidad global: Anuncios uniformes para audiencias mundiales (ej. experiencias RA en marcas internacionales).
+<br>
+Publicidad contextual: Anuncios adaptados a culturas o necesidades locales (ej. RA que refleja tradiciones regionales).
+<br>
+<br>
+•	Indicadores sociales:
+<br>
+Acceso: Brecha digital por falta de dispositivos.
+Educación: Apps inmersivas mejoran aprendizaje.
+Interacción: Menos contacto humano por IA.
+Empleo: Nuevos trabajos tecnológicos, pero pérdidas en sectores tradicionales.
+<br>
+
+<!-- Tabla de Impacto -->
+<table id="tabla">
+        <thead>
+            <tr>
+                <th>Indicador</th>
+                <th>Impacto Positivo</th>
+                <th>Impacto Negativo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Acceso</td>
+                <td>Democratización del conocimiento y entretenimiento.</td>
+                <td>Brecha digital en comunidades sin dispositivos adecuados o conectividad.</td>
+            </tr>
+            <tr>
+                <td>Educación</td>
+                <td>Apps inmersivas ayudan a aprender de forma visual, práctica e interactiva.</td>
+                <td>Puede aumentar la dependencia tecnológica sin una base pedagógica sólida.</td>
+            </tr>
+            <tr>
+                <td>Interacción</td>
+                <td>Nuevas formas de colaboración remota y simulaciones sociales.</td>
+                <td>Disminución del contacto humano, sobre todo con el uso de asistentes de IA.</td>
+            </tr>
+            <tr>
+                <td>Empleo</td>
+                <td>Se generan empleos en desarrollo de apps, diseño 3D, entrenamiento de IA, etc.</td>
+                <td>Se pierden empleos tradicionales por automatización.</td>
+            </tr>
+        </tbody>
+
+    </table></p>
+
+    </div>
+<br>
+    <div id="causas">
+      <h4>Análisis de Causas</h4>
+      <br>
+      <br>
+      <p>
+        <p class="p1">Factores internos</p>
+ <br>
+  <br>
+  Falta de experiencia del equipo en RA, RV e IA.
+ <br>
+ Presupuesto limitado para herramientas y dispositivos.
+ <br>
+ Recursos tecnológicos insuficientes (hardware/software).
+ <br>
+ Problemas de integración entre tecnologías avanzadas.
+ <br>
+ Planificación inadecuada del proyecto.
+ <br>
+ Falta de comunicación entre áreas del equipo.
+ <br>
+  <br>
+  <p class="p1">Factores externos</p>
+  <br>
+  <br>
+Evolución constante de plataformas y APIs móviles.
+<br>
+Altos costos de dispositivos compatibles para el usuario.
+<br>
+Competencia elevada en el mercado de apps innovadoras.
+<br>
+Falta de estándares para integrar RA, RV e IA.
+<br>
+Dependencia de servicios externos o conexión a internet.
+<br>
+Resistencia o desconocimiento del usuario ante estas tecnologías.
+<br>
+<br>
+<p class="p1">Interrelaciones</p>
+<br>
+<br>
+Falta de conocimientos y poco presupuesto dificultan integrar RA, RV e IA.
+<br>
+Pocos recursos + cambios externos afectan el desarrollo.
+<br>Alta demanda del mercado empeora la mala planificación.
+Depender de servicios externos reduce el rendimiento si no hay buena infraestructura.
+<br>
+</p>
+    </div>
+
+    <div id="actores">
+      <h4>Análisis de Actores Clave</h4>
+      <p>
+        <br>
+        <br>
+        <p class="p1">Identificación</p>
+        <br>
+        <br>
+¿Quiénes son los stakeholders internos y externos, que son afectados por el problema o que pueden influir en la solución?
+<br>
+<br>
+<p class="p1">Stakeholders internos</p> 
+(dentro del equipo o la organización):
+<br>
+<br> 
+Desarrolladores de software: Afectados si hay dificultades técnicas, plazos ajustados o cambios en los requisitos; influyen directamente en la solución con su conocimiento técnico. 
+<br>
+Diseñadores UX/UI: Su trabajo impacta en la calidad de la experiencia del usuario; pueden proponer soluciones visuales o funcionales. 
+<br>
+Especialistas en IA, RA o RV: Si la tecnología presenta limitaciones, ellos deben adaptarse o innovar; son clave para resolver problemas complejos. 
+<br>
+Gerente de proyecto / product owner: Afectado por retrasos, sobrecostos o cambios en el alcance; decide prioridades y gestiona recursos. 
+<br>
+Equipo de QA/testers: Detectan problemas que afectan la calidad del producto; pueden influir en correcciones y mejoras. 
+<br>
+<br>
+<p class="p1">Stakeholders externos</p>  
+(fuera de la organización, pero involucrados o impactados): 
+<br>
+<br>
+Usuarios finales: Son los más afectados si la app no cumple con sus expectativas; con su retroalimentación influyen en futuras versiones. 
+<br>
+Clientes o empresas contratantes: Se ven afectados si el producto no cumple sus objetivos; tienen poder de decisión sobre el rumbo del desarrollo. 
+<br>
+Inversionistas o patrocinadores: Afectados por posibles pérdidas o demoras; pueden influir en cambios estratégicos o de financiamiento. 
+<br>
+Entidades regulatorias o legales: Afectadas si la app viola normas de privacidad, seguridad o accesibilidad; pueden bloquear o exigir modificaciones. 
+<br>
+Proveedores de tecnología (plataformas, APIs, SDKs): Si su tecnología cambia o falla, afecta directamente a la app; pueden limitar o expandir las posibilidades del desarrollo. 
+<br>
+Tiendas de apps (Google Play, App Store): Afectadas si el contenido no es apropiado o cumple normas; influyen al aprobar o rechazar la publicación.
+<br>
+<br>
+
+<p class="p1">Intereses y motivación:</p> 
+¿Qué busca cada actor? ¿Cuáles son sus objetivos, preocupaciones y prioridades?
+<br>
+<br>
+Desarrolladores: crear una app funcional, innovadora y con buena experiencia de usuario. 
+<br>
+Especialistas en IA/RA/RV: demostrar el potencial tecnológico y lograr precisión, realismo y eficiencia. 
+<br>
+Usuarios finales: desean una app útil, intuitiva, segura y que no consuma muchos recursos del dispositivo. 
+<br>
+Clientes/empresas: buscan beneficios comerciales, diferenciación, aumentar ventas o fidelizar clientes. 
+<br>
+Inversionistas: esperan retorno económico y escalabilidad del producto. 
+<br>
+Reguladores: quieren asegurar la ética, la privacidad de datos, la seguridad y la accesibilidad. 
+<br>
+Marketing: enfocados en la aceptación en el mercado y la competitividad frente a otras apps.
+<br>
+<br>
+<p class="p1">Poder e influencia</p> 
+¿Qué capacidad tiene cada actor para afectar el resultado?
+<br>
+<br>
+Clientes e inversionistas: pueden financiar, pausar o redirigir el proyecto. 
+<br>
+Usuarios beta o testers: su retroalimentación puede modificar el diseño o eliminar funciones innecesarias. 
+<br>
+Reguladores y normativas: pueden detener el lanzamiento si no se cumple con políticas de privacidad o accesibilidad. 
+<br>
+Tiendas de apps: pueden rechazar la publicación de la app si no cumple sus requisitos técnicos o legales. 
+<br>
+Proveedores de tecnología: si una plataforma cambia sus políticas (ej. API), puede afectar el funcionamiento de la app.
+<br>
+<br>
+<p class="p1">Relaciones</p> 
+¿Cómo se relacionan los actores entre sí? ¿hay conflictos o alianzas?
+<br>
+<br>
+•	Colaboraciones frecuentes: 
+<br>
+<br>
+Entre desarrolladores y expertos en IA para entrenar modelos adecuados. 
+<br>
+Entre diseñadores UX y desarrolladores para lograr una buena experiencia en RA/RV. 
+<br>
+Entre empresas y universidades para proyectos de innovación tecnológica. 
+ <br>
+ <br>
+ •	Conflictos posibles: 
+<br>
+<br>	
+Entre desarrolladores y clientes si hay cambios constantes en los requerimientos. 
+<br>
+Entre privacidad de usuarios y análisis de datos mediante IA. 
+<br>
+Entre regulaciones éticas y objetivos de monetización basados en datos personales. 
+<br>
+<br>
+<p class="p1">Alianzas clave</p>  
+<br>
+<br>
+Empresas tecnológicas con startups innovadoras. 
+<br>
+Plataformas de RA/RV con desarrolladores para potenciar el uso de sus herramientas.
+<br>
+Inversores con empresas que buscan escalar rápidamente.
+<br>
+<br>
+</p>
+    </div>
+
+    <div id="recomendaciones">
+      <h4>Recomendaciones y Plan de Acción</h4>
+      <p>
+        <br>
+        <br>
+        Se recomienda integrar tecnologías emergentes como la Realidad Aumentada (RA), Realidad Virtual (RV) e Inteligencia Artificial (IA) en el desarrollo de aplicaciones móviles con el objetivo de ofrecer experiencias más inmersivas, personalizadas e interactivas a los usuarios. Esta estrategia no solo mejora la usabilidad y el atractivo visual de las aplicaciones, sino que también incrementa el valor agregado del producto final, facilitando la diferenciación en mercados altamente competitivos.
+<br>
+        Para lograrlo, se sugiere:
+<br>
+<br>
+Adoptar frameworks y plataformas compatibles con RA y RV como ARCore, ARKit, Unity o Unreal Engine.
+<br>
+Implementar modelos de IA que permitan funciones como reconocimiento de voz, visión por computadora, recomendaciones personalizadas y asistentes virtuales.
+<br>
+Capacitar al equipo de desarrollo en el uso de estas tecnologías para garantizar una correcta implementación y mantenimiento.
+<br>
+Realizar pruebas piloto con usuarios reales, que permitan validar la efectividad de las experiencias inmersivas e inteligentes.
+<br>
+<br>
+<p class="p1">Plan de implementación</p>
+<br>
+<br>
+• Fase 1: Diagnóstico y Planeación (1 mes)
+<br>
+<br>
+Identificar necesidades del usuario y casos de uso clave.
+<br>
+Estudio de mercado y competencia.
+<br>
+Selección de tecnología (AR, VR, IA) adecuada para la app.
+<br>
+Evaluar presupuesto, tiempos y personal técnico.
+<br>
+<br>
+• Fase 2: Prototipo y Validación (1-2 meses)
+<br>
+<br>
+Crear un MVP (Producto Mínimo Viable) con la tecnología seleccionada.
+<br>
+AR: mostrar objetos virtuales en el entorno real.
+<br>
+VR: entorno navegable básico.
+<br>
+IA: chatbot funcional o recomendador.
+<br>
+Realizar pruebas de usabilidad con usuarios reales.
+<br>
+Recoger feedback.
+<br>
+<br>
+•	Fase 3: Desarrollo y Optimización (2-4 meses)
+<br>
+<br>
+Desarrollo completo de funcionalidades.
+<br>
+Integración con bases de datos, APIs, sistemas de IA/ML.
+<br>
+Optimización para rendimiento móvil.
+<br>
+<br>
+• Fase 4: Lanzamiento y Medición (1 mes)
+<br>
+<br>
+Publicación en App Store / Play Store.
+<br>
+Monitoreo de métricas clave (ver siguiente sección).
+<br>
+Plan de actualizaciones y mejoras basado en feedback.
+<br>
+<br>
+<p class="p1">Métrica de éxito</p> 
+<br>
+<br>
+•	Métricas de Adopción
+<br>
+<br>
+Número de descargas
+<br>
+Tasa de instalación por dispositivo compatible con AR/VR
+<br>
+Porcentaje de usuarios que activan la función IA, AR o VR
+<br>
+<br>
+•	Métricas de Uso
+<br>
+<br>
+Tiempo promedio de uso por sesión
+<br>
+Frecuencia de uso de las funciones AR/VR/IA
+<br>
+Número de interacciones o escenarios completados (en VR/AR)
+<br>
+<br>
+• Métricas de Experiencia del Usuario (UX)
+<br>
+Net Promoter Score (NPS)
+<br>
+Calificación en tiendas de apps
+<br>
+Resultados de encuestas de satisfacción
+<br>
+<br>
+•	Métricas de Rendimiento Técnico
+<br>
+Latencia en la respuesta de IA (chatbot, análisis)
+<br>
+FPS promedio (para VR/AR)
+<br>
+Uso de batería y rendimiento en dispositivos móviles
+<br>
+<br>
+•	Métricas de Negocio
+<br>
+<br>
+Retención de usuarios (día 1, 7, 30)
+<br>
+Tasa de conversión (si es app de ventas, reservas, etc.)
+<br>
+Ingresos generados directamente por funciones AR/VR/IA (si aplica)
+<br>
+<br>
+Es una página web interactiva diseñada para desmitificar y hacer accesibles las tecnologías de Realidad Virtual (RV), Realidad Aumentada (RA) e Inteligencia Artificial (IA). El objetivo principal es ofrecer un recurso educativo y demostrativo que permite a los usuarios experimentar de primera mano ejemplos sencillos de cada uno de estas innovaciones, directamente en su navegador web y sin necesidad de instalaciones o hardware adicional.
+<br>
+<br>
+Las tecnologías de RV, RA e IA están transformado rápidamente diversos sectores y aspectos de nuestra vida. Sin embargo, su complejidad a menudo crea una barrera para su comprensión general. Este proyecto busca superar esa barrera ofreciendo demostraciones prácticas y fáciles de usar que ilustran los principios fundamentales de cada tecnología. Esto no solo servirá como una excelente herramienta de aprendizaje experiencial para mis compañeros y profesores, sino que también descara mis habilidades en el desarrollo Web interactivo. 
+<br>
+<br>
+Componentes Clave y Ejemplos de Interacción Web 
+<br>
+La página web se estructura en 3 secciones principales, cada una dedicada a una tecnología específica, como una breve explicación y ejemplo interactivo.
+</p>
+    </div>
+
+    <div id="conclusion">
+      <h4>Conclusión</h4>
+      <br>
+      <br>
+      <p>La fusión de RA, RV e IA está redefiniendo las aplicaciones móviles, ofreciendo experiencias inmersivas e inteligentes. Aunque existen desafíos en hardware, software y UX, la continua innovación y la colaboración multidisciplinaria prometen un futuro donde la tecnología se integrará de forma fluida e inteligente en nuestro entorno. El éxito dependerá de superar estos obstáculos y asegurar un desarrollo ético y seguro.</p>
+<img src="https://images.unsplash.com/photo-1553877522-43269d4ea984" alt="Futuro tecnológico" style="max-width: 90%; margin: 20px 0; display: block; border-radius: 10px;">
+    
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contact" class="contact-section">
+    <h3>Contáctanos</h3>
+    <div class="contact-buttons">
+      <a href="tel:+5215512345678"><i class="fas fa-phone"></i> Llamar: 5539092803 </a>
+      <a href="mailto:contacto@tecnoproyecto.com"><i class="fas fa-envelope"></i> Enviar correo</a>
+    </div>
+  </section>
+
+  <!-- Botón para ir arriba -->
+  <button id="scrollTopBtn" title="Volver arriba">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script>
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    const contactSection = document.getElementById("contact");
+
+    window.addEventListener("scroll", () => {
+      const rect = contactSection.getBoundingClientRect();
+      const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
+      scrollTopBtn.style.display = isVisible ? "block" : "none";
+    });
+
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+
+  <!-- Chatbot Botpress -->
+
+    
+    <script src="https://cdn.botpress.cloud/webchat/v3.2/inject.js" defer></script>
+<script src="https://files.bpcontent.cloud/2025/08/02/20/20250802203646-J1YUVOQP.js" defer></script>
+    
+    
+    
+</body>
+</html>

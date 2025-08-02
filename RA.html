@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Realidad Aumentada Básica</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- Importar A-Frame y AR.js -->
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        
+        /* Estilo para el loader */
+        .arjs-loader {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+        }
+        
+        .arjs-loader div {
+            text-align: center;
+            font-size: 1.25em;
+            margin-top: 10px;
+        }
+        
+        /* Instrucciones para el usuario */
+        .instructions {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            z-index: 1000;
+        }
+        
+        /* Botón de pantalla completa */
+        .fullscreen-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loader que se muestra mientras se carga la escena -->
+    <div class="arjs-loader">
+        <div>Cargando realidad aumentada...</div>
+        <div>Por favor, permite el acceso a tu cámara</div>
+    </div>
+    
+    <!-- Botón de pantalla completa -->
+    <button class="fullscreen-btn" onclick="toggleFullscreen()">Pantalla Completa</button>
+    
+    <!-- Instrucciones para el usuario -->
+    <div class="instructions">
+        Imprime el <a href="https://raw.githubusercontent.com/AR-js-org/AR.js/master/data/images/hiro.png" target="_blank" style="color: #4fc3f7;">marcador Hiro</a> y apunta tu cámara hacia él
+    </div>
+    
+    <!-- Escena principal de A-Frame -->
+    <a-scene 
+        vr-mode-ui="enabled: false"
+        renderer="logarithmicDepthBuffer: true;"
+        arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;"
+        embedded>
+        
+        <!-- Marcador Hiro -->
+        <a-marker preset="hiro" id="marker">
+            <!-- Modelo 3D de ejemplo (un cubo animado) -->
+            <a-box 
+                position="0 0.5 0" 
+                material="color: #4CC3D9; metalness: 0.8; roughness: 0.2" 
+                scale="0.5 0.5 0.5"
+                animation="property: rotation; to: 0 360 0; loop: true; dur: 4000; easing: linear">
+            </a-box>
+            
+            <!-- Texto debajo del cubo -->
+            <a-text 
+                value="¡Funciona!" 
+                position="0 -0.5 0" 
+                align="center" 
+                color="#FFF" 
+                scale="2 2 2">
+            </a-text>
+        </a-marker>
+        
+        <!-- Cámara -->
+        <a-entity camera></a-entity>
+    </a-scene>
+    
+    <script>
+        // Ocultar el loader cuando la escena esté lista
+        document.querySelector('a-scene').addEventListener('loaded', function() {
+            setTimeout(function() {
+                const loader = document.querySelector('.arjs-loader');
+                if (loader) {
+                    loader.style.display = 'none';
+                }
+            }, 1500);
+        });
+        
+        // Manejar errores
+        document.querySelector('a-scene').addEventListener('error', function() {
+            const loader = document.querySelector('.arjs-loader');
+            if (loader) {
+                loader.innerHTML = '<div>Error al cargar la realidad aumentada</div>' +
+                                   '<div>Asegúrate de permitir el acceso a la cámara</div>';
+            }
+        });
+        
+        // Función para pantalla completa
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        }
+        
+        // Verificar si el marcador es detectado
+        const marker = document.getElementById('marker');
+        if (marker) {
+            marker.addEventListener('markerFound', function() {
+                console.log('Marcador detectado!');
+            });
+            
+            marker.addEventListener('markerLost', function() {
+                console.log('Marcador perdido');
+            });
+        }
+    </script>
+</body>
+</html>
