@@ -730,3 +730,9 @@ font-size: 25px; /* Tamaño de la fuente */
     background-color: #38a1c4;
     cursor: pointer;
 }
+
+@media (max-width: 480px) {
+    .hero-content h2 {
+        font-size: 2em !important;
+    }
+}
