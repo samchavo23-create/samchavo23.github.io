@@ -892,3 +892,51 @@ font-size: 25px; /* Tamaño de la fuente */
         font-size: 0.9em;
     }
 }
+
+@media (max-width: 480px) {
+    /* Ajustes específicos para la tabla */
+    table {
+        width: 100% !important;
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        border-collapse: collapse;
+    }
+    
+    th, td {
+        padding: 8px 5px !important;
+        font-size: 0.8em !important;
+        min-width: 100px;
+    }
+    
+    /* Ajustes para los textos especiales */
+    #tempo-yectos h1, #tempo-yectos h2, #tempo-yectos h3 {
+        font-size: 1.3em !important;
+        line-height: 1.4;
+    }
+    
+    #tempo-yectos p, #tempo-yectos li {
+        font-size: 0.85em !important;
+    }
+    
+    /* Ajustes para listas */
+    #tempo-yectos ul {
+        padding-left: 15px;
+    }
+    
+    /* Separación entre secciones */
+    #tempo-yectos > * {
+        margin-bottom: 15px !important;
+    }
+    
+    /* Líneas divisorias */
+    #tempo-yectos hr {
+        margin: 10px 0;
+    }
+    
+    /* Textos en negrita */
+    #tempo-yectos strong {
+        font-size: 0.9em;
+    }
+}
+
