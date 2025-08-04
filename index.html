@@ -128,11 +128,14 @@
 @media (max-width: 768px) {
   body {
     margin-left: 0;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .sidebar {
     transform: translateX(-220px);
     transition: transform 0.3s ease;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
   }
 
   .sidebar.active {
@@ -146,16 +149,22 @@
     left: 10px;
     background-color: #001f2f;
     color: white;
-    padding: 10px 15px;
+    padding: 8px 12px;
     border: none;
     z-index: 1100;
-    font-size: 20px;
+    font-size: 18px;
     border-radius: 5px;
     cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
   }
 
   header, main, section, footer {
-    padding-left: 0 !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  .hero-section {
+    padding-top: 50px; /* espacio para que no tape el botón */
   }
 }
 </style>
@@ -166,7 +175,8 @@
 
   <!-- Menú lateral -->
 
-  <!-- Botón para abrir/cerrar menú en móvil -->
+ 
+<!-- Botón para abrir/cerrar menú en móvil -->
 <button class="menu-toggle" onclick="toggleSidebar()">
   <i class="fas fa-bars"></i>
 </button>
@@ -800,6 +810,5 @@ La página web se estructura en 3 secciones principales, cada una dedicada a una
 </body>
 </html>
 
-    
 </body>
 </html>
