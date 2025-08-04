@@ -731,8 +731,164 @@ font-size: 25px; /* Tamaño de la fuente */
     cursor: pointer;
 }
 
+/* Media Queries para móviles (menos de 480px) */
 @media (max-width: 480px) {
+    /* Header */
+    .header-main {
+        padding: 15px 5%;
+    }
+    
+    .logo h1 {
+        font-size: 1.5em;
+    }
+    
+    .main-nav ul li {
+        margin-left: 15px;
+    }
+    
+    /* Hero Section */
+    .hero-section {
+        min-height: 80vh;
+        padding: 40px 5%;
+    }
+    
     .hero-content h2 {
-        font-size: 2em !important;
+        font-size: 2em;
+        margin-bottom: 15px;
+    }
+    
+    .hero-content p {
+        font-size: 0.9em;
+        margin-bottom: 30px;
+    }
+    
+    .btn {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+    
+    /* Secciones */
+    .section {
+        padding: 50px 5%;
+    }
+    
+    .section-header h3 {
+        font-size: 1.8em;
+    }
+    
+    .section-header p {
+        font-size: 1em;
+    }
+    
+    /* Cards */
+    .about-card, .service-card {
+        padding: 25px;
+    }
+    
+    .about-card i, .service-card i {
+        font-size: 2em;
+    }
+    
+    .about-card h4, .service-card h4 {
+        font-size: 1.3em;
+    }
+    
+    /* Portfolio */
+    .portfolio-item img {
+        height: 200px;
+    }
+    
+    /* Contacto */
+    .contact-form {
+        width: 100%;
+    }
+    
+    /* Footer */
+    .footer-main {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .social-links {
+        margin-top: 15px;
+    }
+    
+    /* Chatbot */
+    .chatbot-window {
+        width: 95vw;
+        height: 70vh;
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    #chatbot-toggle {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5em;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    /* Tabla */
+    #tabla {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    /* Texto especial */
+    .p1 {
+        font-size: 1.2em;
+    }
+    
+    /* Contexto */
+    #contexto p {
+        font-size: 0.9em;
+        padding: 10px;
+    }
+}
+
+/* Media Queries para tablets pequeñas (481px - 600px) */
+@media (min-width: 481px) and (max-width: 600px) {
+    .hero-content h2 {
+        font-size: 2.2em;
+    }
+    
+    .section-header h3 {
+        font-size: 2em;
+    }
+    
+    .about-grid, .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+/* Ajustes para landscape en móviles */
+@media (max-height: 480px) and (orientation: landscape) {
+    .hero-section {
+        min-height: 120vh;
+    }
+    
+    .chatbot-window {
+        height: 60vh;
+    }
+}
+
+/* Ajustes para pantallas muy pequeñas */
+@media (max-width: 320px) {
+    .main-nav ul li {
+        margin-left: 10px;
+    }
+    
+    .main-nav ul li a {
+        font-size: 0.9em;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.8em;
+    }
+    
+    .btn {
+        padding: 10px 15px;
+        font-size: 0.9em;
     }
 }
