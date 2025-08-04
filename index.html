@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Apps Móviles con RA, RV & IA</title>
@@ -123,10 +122,55 @@
       background-color: #008cba;
     }
   </style>
+
+<style>
+/* ==== Estilos Responsive solo para móviles ==== */
+@media (max-width: 768px) {
+  body {
+    margin-left: 0;
+  }
+
+  .sidebar {
+    transform: translateX(-220px);
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .menu-toggle {
+    display: block;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: #001f2f;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    z-index: 1100;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  header, main, section, footer {
+    padding-left: 0 !important;
+  }
+}
+</style>
+
+
 </head>
 <body>
 
   <!-- Menú lateral -->
+
+  <!-- Botón para abrir/cerrar menú en móvil -->
+<button class="menu-toggle" onclick="toggleSidebar()">
+  <i class="fas fa-bars"></i>
+</button>
+
   <div class="sidebar">
     <h3>Temas</h3>
     <ul>
@@ -179,7 +223,7 @@
       <div class="about-card">
         <i class="fas fa-chart-line"></i>
         <h4>Objetivo</h4>
-        <p>Demostrar, como el uso de las nuevas Tecnologías como lo es la Realidad Virtual (Rv), Realidad Aumentada (Ra) e Inteligencia Artificial (Ia), y como estas Tecnologías han Revolucionado el desarrollo de aplicaciones móviles 
+        <p>demostrar, como el uso de las nuevas Tecnologías como lo es la Realidad Virtual (Rv), Realidad Aumentada (Ra) e Inteligencia Artificial (Ia), y como estas Tecnologías han Revolucionado el desarrollo de aplicaciones móviles 
 </p>
       </div>
       <div class="about-card">
@@ -746,9 +790,16 @@ La página web se estructura en 3 secciones principales, cada una dedicada a una
     <script src="https://cdn.botpress.cloud/webchat/v3.2/inject.js" defer></script>
 <script src="https://files.bpcontent.cloud/2025/08/02/20/20250802203646-J1YUVOQP.js" defer></script>
     
-    
-    
+<!-- Script para mostrar/ocultar menú en móvil -->
+<script>
+  function toggleSidebar() {
+    const sidebar = document.querySelector(".sidebar");
+    sidebar.classList.toggle("active");
+  }
+</script>
 </body>
 </html>
 
-
+    
+</body>
+</html>
